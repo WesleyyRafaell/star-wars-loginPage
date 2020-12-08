@@ -139,9 +139,9 @@
 
 
 @media screen and (max-width: 360px){
-  .mainStar{
+  /* .mainStar{
     height: 100%!important;
-  }
+  } */
   .boxForm{
     width: 100%;
   }
