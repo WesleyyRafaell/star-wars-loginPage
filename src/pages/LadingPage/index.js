@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import Lottie from 'react-lottie';
+import { Lottie } from '@crello/react-lottie';
 
 import animationData from  '../../animation.json'; 
 
@@ -9,18 +8,6 @@ import sw_logo from '../../assets/img/sw_logo.png';
 import capa from '../../assets/img/capa1.png';
 
 function LadingPage() {
-  const [animationState, setAnimationState] = useState({
-    isStopped: false, isPaused: false
-  });
-
-  const defaultOptions = {
-    loop: true,
-    autoplay: true, 
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
 
   return (
     <main className="mainStar">
@@ -46,11 +33,14 @@ function LadingPage() {
               <button>Login</button>
             </div>
             <div className="animation">
-              <Lottie options={defaultOptions}
+              <Lottie 
+                config={{
+                  animationData: animationData,
+                  loop: true
+                }}
                 height={100}
                 width={100}
-                isStopped={animationState.isStopped}
-                isPaused={animationState.isPaused}/>
+                playingState={'playing'}/>
             </div>
           </form>
         </div>
